@@ -1,0 +1,110 @@
+What is Emmet?
+
+Emmet is a powerful toolkit for web developers that significantly speeds up HTML and CSS workflow. Originally a plugin for various text editors like Sublime Text, Visual Studio Code, and others, Emmet is now integrated into many editors and IDEs by default or available as an extension.
+
+Emmet provides shorthand abbreviations, called "emmet abbreviations" or "emmet snippets," which expand into full HTML or CSS code. This allows developers to write HTML and CSS code much faster and with fewer keystrokes. Here are some key features of Emmet:
+
+Abbreviations: Emmet allows you to type shorthand abbreviations and then expand them into complete HTML or CSS structures. For example, typing ul>li*3 and pressing the expand command will generate a <ul> with three <li> elements.
+
+Nested Elements: Emmet supports nesting of elements, making it easy to create complex HTML structures quickly. For example, div>p>a will generate a <div> containing a <p> with an <a> inside it.
+
+CSS-like Syntax: Emmet uses a syntax that is similar to CSS selectors, making it intuitive for developers who are familiar with CSS.
+
+Dynamic Expressions: Emmet supports dynamic expressions, allowing you to generate repetitive patterns with ease. For example, ul>li.item$*5 will generate five list items with the class names item1, item2, item3, etc.
+
+Customization: Emmet allows customization of its abbreviations and behavior, enabling developers to tailor it to their specific workflow and preferences.
+
+Overall, Emmet is a valuable tool for web developers, significantly improving productivity by streamlining the process of writing HTML and CSS code.
+
+
+--------------------------------------------------------------
+
+What is CDN? Why do we use it?
+
+CDN stands for Content Delivery Network. It is a network of distributed servers strategically located around the world to deliver web content more efficiently to users based on their geographic location.
+
+Here's why CDNs are used and their benefits:
+
+Faster Content Delivery: CDNs cache static content like images, stylesheets, scripts, and other files on servers located closer to users. When a user requests content, it is delivered from the nearest CDN server, reducing latency and improving load times.
+
+Improved Website Performance: By offloading the delivery of static content to CDN servers, the origin server experiences reduced load, leading to better overall website performance and scalability.
+
+Scalability: CDNs can handle large volumes of traffic and distribute it across multiple servers, ensuring that websites remain available and responsive even during traffic spikes or distributed denial-of-service (DDoS) attacks.
+
+Redundancy and Reliability: CDNs offer redundancy and failover mechanisms, ensuring high availability and reliability. If one server fails or becomes unavailable, requests are automatically routed to alternative servers, minimizing downtime.
+
+Global Reach: CDNs have a global network of servers, allowing content to be delivered quickly to users worldwide. This is particularly beneficial for websites with an international audience, as it ensures a consistent user experience regardless of geographic location.
+
+Bandwidth Savings: CDNs help reduce bandwidth consumption on the origin server by serving cached content directly from edge servers. This can result in cost savings for website owners, especially for sites with high traffic volumes.
+
+Overall, CDNs play a crucial role in optimizing website performance, enhancing user experience, and ensuring the reliability and scalability of web applications and content delivery.
+
+---------------------------------------------------------------- 
+
+
+Why is React known as React?
+
+React, the JavaScript library for building user interfaces, is known as "React" because of its core concept of reactive programming.
+
+In reactive programming, the user interface reacts dynamically to changes in data or state. When the underlying data changes, React automatically updates the user interface to reflect those changes without the need for manual intervention. This approach is achieved through the use of a virtual DOM (Document Object Model) and a reconciliation process, which efficiently updates only the parts of the DOM that have changed.
+
+The name "React" reflects this reactive nature of the library, emphasizing its ability to reactively update the user interface in response to changes in application state or data. Additionally, the name conveys the idea of component-based architecture, where the UI is composed of reusable and composable components that react to changes independently.
+
+React was developed by Facebook and was first released in 2013. Since then, it has become one of the most popular libraries for building modern web applications due to its simplicity, performance, and declarative approach to building user interfaces.
+
+
+------------------------------------------------------------------
+
+
+What is crossorigin in script tag?
+
+The crossorigin attribute in a <script> tag is used to specify how the browser should handle requests for the script file when loading it from a different origin (i.e., a different domain, protocol, or port) than the one hosting the current web page.
+
+When you load a script from a different origin, browsers enforce a security policy called the "same-origin policy" to prevent potentially malicious scripts from accessing sensitive data on other origins. However, there are situations where you might want to load scripts from different origins while still maintaining security. That's where the crossorigin attribute comes into play.
+
+The crossorigin attribute can take the following values:
+
+anonymous: This is the default value. It indicates that the script should be fetched without sending any credentials (such as cookies or HTTP authentication) along with the request. This is suitable for scripts that do not require access to sensitive data from the requesting origin.
+
+use-credentials: This value indicates that the script should be fetched with credentials, such as cookies or HTTP authentication headers, if available. This is useful when the script needs to access resources on the server that require authentication.
+
+Here's an example of how you might use the crossorigin attribute in a <script> tag:
+
+html
+Copy code
+<script src="https://example.com/script.js" crossorigin="anonymous"></script>
+By specifying crossorigin="anonymous", you're indicating that the script should be fetched without sending any credentials along with the request.
+
+It's important to note that the server hosting the script must also be configured to allow cross-origin requests by sending the appropriate CORS (Cross-Origin Resource Sharing) headers. Otherwise, the browser may block the request due to the same-origin policy.
+
+------------------------------------------------------------------
+
+What is difference between react.development.js and react.production.js files via CDN?
+
+The difference between react.development.js and react.production.js files lies primarily in their intended use cases and the optimizations applied during their creation:
+
+Development vs. Production Environment:
+
+react.development.js: This file is intended for development environments. It includes additional warnings, debugging information, and error messages that aid developers in identifying and fixing issues during the development process. It is larger in size compared to the production version due to the inclusion of these development aids.
+react.production.js: This file is optimized for production environments. It is stripped of development-specific code, warnings, and debugging information to reduce its size and improve performance. It is smaller in size compared to the development version, making it more suitable for deployment in production environments where minimizing file size and optimizing performance are critical.
+Error Handling:
+
+react.development.js: This version includes comprehensive error messages, warnings, and debugging information, which are helpful for developers during the development and debugging phases.
+react.production.js: Error messages and warnings are minimized or omitted entirely to reduce file size and optimize performance. This version prioritizes production performance over detailed error reporting, as verbose error messages are not typically required or desirable in production environments.
+Optimizations:
+
+react.development.js: This version may include additional development-specific features, optimizations, or logging mechanisms that aid in debugging and development but are not necessary for production use.
+react.production.js: This version is optimized for performance and file size, with development-specific features and optimizations removed to minimize the bundle size and improve loading times in production environments.
+When using React via a CDN in a production environment, it's recommended to use the react.production.js version to ensure optimal performance and minimal bundle size. During development, the react.development.js version is typically used to take advantage of its debugging features and comprehensive error messages.
+
+------------------------------------------------------------------
+
+What is diference between React and ReactDOM
+
+React and ReactDOM are two related but distinct libraries within the React ecosystem:
+
+React: React is a JavaScript library for building user interfaces. It provides a component-based architecture where UIs are composed of reusable and composable components. React allows developers to create interactive and dynamic user interfaces by managing the state of components and efficiently updating the DOM using a virtual DOM and a process called reconciliation. React focuses solely on the core functionality of building UI components and managing their state.
+
+ReactDOM: ReactDOM is a package that provides specific methods for rendering React components into the DOM. It is responsible for the integration between React components and the DOM. ReactDOM includes methods like ReactDOM.render() for rendering React elements into a DOM container, ReactDOM.hydrate() for server-side rendering hydration, and ReactDOM.unmountComponentAtNode() for unmounting React components from the DOM. ReactDOM is necessary for incorporating React components into a web application and ensuring that they are properly rendered and updated in the browser.
+
+In summary, React is the core library for building UI components and managing their state, while ReactDOM provides the necessary functionality for rendering React components into the DOM and interacting with the browser's document object model. Both libraries work together to enable the creation of dynamic and interactive user interfaces in web applications.
